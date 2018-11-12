@@ -1,0 +1,55 @@
+Step1: Install Oracle java 8 on ubuntu 14.04
+1. Add apt repository
+
+# sudo apt-add-repository ppa:webupd8team/java
+
+Type in user password when it asks and hit Enter to continue.
+
+
+2. After that, update system package cache and install Oracle java 8
+
+# sudo apt-get update
+# sudo apt-get install oracle-java8-installer
+
+
+check java version
+#java -version
+
+Step3: To Set JAVA_HOME / PATH for all user, You need to setup global config in
+/etc/profile OR /etc/bash.bashrc file for all users:
+open /etc/profile
+
+#sudo vi /etc/profile
+
+add bellow steps end of file
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
+export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+#cd /opt
+
+#sudo wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+
+#sudo tar xzf apache-maven-3.5.4-bin.tar.gz
+
+#sudo ln -s /opt/apache-maven-3.5.4/bin/mvn /usr/bin/mvn
+
+#sudo vi /etc/profile
+M2_HOME=/opt/apache-maven-3.5.4
+PATH=$PATH:$M2_HOME/bin
+export M2_HOME
+export PATH
+
+#sudo apt-get install git
+
+#wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+#sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+#sudo apt-get update
+#sudo apt-get install jenkins
+
+
+#sudo service jenkins status
+
+Go to any browser give your ip:8080
