@@ -1,0 +1,16 @@
+properties([parameters([choice(choices: ['master', 'gameoflife-release-.1', 'gameoflife-release-1.0.8'], description: '', name: 'branch')])])
+node {
+    stage('scm') {
+        echo "hi murali pulling chanes from branch${params.branch}"
+       
+    }
+    stage('git') {
+         git url: 'https://github.com/immurali5/game-of-life.git' , branch: "${params.branch}"
+    }
+    stage('mvn') {
+        sh label: '', script: 'mvn clean package'
+    }
+    stage('package name') {
+        echo "game-of-life"
+    }
+}
