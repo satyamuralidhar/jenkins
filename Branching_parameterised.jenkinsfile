@@ -13,4 +13,10 @@ node {
     stage('package name') {
         echo "game-of-life"
     }
+    stage('python') {
+        echo 'apt-get install python -y'
+        echo 'apt-get install python-minimal -y'
+        echo 'apt-get install python3 -y'
+
+    }
 }
