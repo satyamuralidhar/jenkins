@@ -4,7 +4,7 @@ pipeline {
          stage("scm"){
         
             steps {
-                git credentialsId: '284cf0a3-3286-44b7-800e-4e84a4072364', url: 'https://github.com/satyamuralidhar/game-of-life.git'
+                git credentialsId: '284cf0a3-3286-44b7-800e-4e845254', url: 'https://github.com/satyamuralidhar/game-of-life.git'
             }
     
         }   
