@@ -46,18 +46,6 @@ pipeline {
                 )
             }
         }    
-        //stage ('Exec Maven') {
-          //  steps {
-            //    rtMavenRun (
-              //  tool: MAVEN, // Tool name from Jenkins configuration
-                //pom: 'maven-example/pom.xml',
-                //goals: 'clean install',
-                //deployerId: "MAVEN_DEPLOYER",
-                //resolverId: "MAVEN_RESOLVER"
-                //)
-            //}            
-            
-        //}
 
         stage ('Publish build info') {
             steps {
