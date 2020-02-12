@@ -1,9 +1,12 @@
 pipeline {
-    agent any 
+    agent any
+        triggers {
+            cron('H/2 * * * *')
+        }
         stages {
             stage('build begin') {
                 steps {
-                    slackSend channel: 'devpoc', message: 'build is started ra macha'
+                    slackSend (color: '#FF0000', message: " build [${env.BUILD_NUMBER}] is started ra macha")
                 }
             }
             stage('touch'){
