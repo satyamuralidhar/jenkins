@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                powershell(script: '.\\ci\\build.ps1 -Script .\\ci\\build\\build.cake')
+            }
+        }
+
+        stage('Deploy and run tests') {
+            when {
+                branch('develop')
+            }
+
+            options {
+                lock('test-env')
+            }
+
+            stages {
+                stage('Deploy') {
+                    parallel {
+                        stage('Deploy Foo') {
+                            steps {
+                                build(job: 'Deploy_Foo')
+                            }
+                        }
+
+                        stage('Deploy Bar') {
+                            steps {
+                                build(job: 'Deploy_Bar')
+                            }
+                        }
+                    }
+                }
+
+                stage('Run tests') {
+                    steps {
+                        powershell(script: '.\\ci\\build.ps1 -Script .\\ci\\test\\build.cake')
+                    }
+                }
+            }
+        }
+    }
+}
