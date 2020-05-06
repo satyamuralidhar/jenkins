@@ -10,10 +10,13 @@ Type in user password when it asks and hit Enter to continue.
 
 # sudo apt-get update
 # sudo apt-get install oracle-java8-installer
-
+(or)
+# sudo apt-get install openjdk-8-jdk
 
 check java version
 #java -version
+
+testing :==> #find / -name javac
 
 Step3: To Set JAVA_HOME / PATH for all user, You need to setup global config in
 /etc/profile OR /etc/bash.bashrc file for all users:
