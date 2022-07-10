@@ -9,8 +9,6 @@ function installPackage() {
 
 #installing java
 echo -e "***********************************************\nJAVA_INSTALLATION\n***********************************************"
-sleep 2
-sudo apt-add-repository ppa:webupd8team/java -y
 sudo apt-get update -y
 # sudo apt-get install oracle-java8-installer
 installPackage openjdk-11-jdk -y
