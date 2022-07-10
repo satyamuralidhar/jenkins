@@ -13,7 +13,7 @@ sleep 2
 sudo apt-add-repository ppa:webupd8team/java -y
 sudo apt-get update -y
 # sudo apt-get install oracle-java8-installer
-installPackage openjdk-8-jdk -y
+installPackage openjdk-11-jdk -y
 
 #check java version
 java -version
@@ -28,7 +28,7 @@ then
     echo "java found"
 else
     cat >> /etc/profile << EOF
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
 export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
 EOF
 fi
