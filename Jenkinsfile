@@ -6,7 +6,7 @@ pipeline {
         stages {
             stage('build begin') {
                 steps {
-                    slackSend (color: '#FF0000', message: " build [${env.BUILD_NUMBER}] is started ra macha")
+                    slackSend (color: '#FF0000', message: " build [${env.BUILD_NUMBER}] is started")
                 }
             }
             stage('touch'){
